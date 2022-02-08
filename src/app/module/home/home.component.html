@@ -1,0 +1,14 @@
+<div class="container-home">
+  <section class="container-home__market text-center">
+    <h3>Um espaço de eventos</h3>
+    <p>Pensado pra você e sua família !!</p>
+    <div>
+      <button class="btn bt-primary">CONHECER</button>
+    </div>
+  </section>
+  <section class="container-home__list d-flex">
+    <div *ngFor="let item of images">
+      <app-card><img [src]="item.urlImg" /></app-card>
+    </div>
+  </section>
+</div>

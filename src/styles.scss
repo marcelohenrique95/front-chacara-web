@@ -1,0 +1,32 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background: #1f2949;
+}
+
+.btn {
+  font-family: Verdana;
+  font-weight: bold;
+  padding: 8px 20px;
+  color: #fff;
+  min-width: 170px;
+  &:hover {
+    color: #fff;
+  }
+}
+
+.bt-primary {
+  background: #1f2949;
+  border-bottom: 3px solid #fb7f16;
+
+  &:hover{
+    box-shadow: 0 0 10px #3f518f;
+    transition: 0.2s;
+  }
+}
+
+.bt-secondary {
+  background: #fb7f16;
+  border-bottom: 3px solid #1f2949;
+}
