@@ -7,3 +7,10 @@
             cursor: pointer;
         }
 }
+
+@media screen and (max-width: 480px) {
+    .header_container {
+        justify-content: space-evenly;
+        min-width: 360px;
+    }
+}

@@ -46,8 +46,8 @@
     opacity: 0.5;
 
     &:hover {
-        opacity: 1.0;
-        transition: 0.5s;
+      opacity: 1;
+      transition: 0.5s;
     }
   }
 }
@@ -70,4 +70,25 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000;
+}
+
+@media screen and (max-width: 480px) {
+  .container-home {
+    height: 325px;
+    &__market {
+      h3 {
+        margin: -130px 0 0 35px;
+      }
+      p {
+        font-size: 20px;
+      }
+      div {
+        padding-top: 45px;
+      }
+    }
+    &__list {
+      flex-direction: column;
+      margin: 49px 0 0 75px;
+    }
+  }
 }
