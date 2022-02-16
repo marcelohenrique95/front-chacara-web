@@ -1,9 +1,11 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ItemsIncludeService } from './core/service/items-include.service';
 import { HomeModule } from './module/home/home.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -14,9 +16,12 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     NgbModule,
     HomeModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [
+    ItemsIncludeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,12 +3,15 @@
     <h3>Um espaço de eventos</h3>
     <p>Pensado pra você e sua família !!</p>
     <div>
-      <button class="btn bt-primary">CONHECER</button>
+      <button class="btn bt-primary" (click)="conhecer()">CONHECER</button>
     </div>
   </section>
   <section class="container-home__list d-flex">
     <div *ngFor="let item of images">
-      <app-card><img [src]="item.urlImg" /></app-card>
+      <app-card *ngIf="showInfos"><img [src]="item.urlImg" /></app-card>
     </div>
+  </section>
+  <section class="container-home__info">
+    <app-list [listItem]="listItemPerDay" *ngIf="showInfos"></app-list>
   </section>
 </div>

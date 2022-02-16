@@ -29,7 +29,7 @@
   }
 
   &__list {
-    margin: 180px 120px;
+    margin: 180px 30px 25px 30px;
     overflow-x: scroll;
     justify-content: space-around;
 
@@ -37,6 +37,11 @@
       width: 6px !important;
       height: 5px;
     }
+  }
+
+  
+  &__info {
+    width: 100%;
   }
 
   img {

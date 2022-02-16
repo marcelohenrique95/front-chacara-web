@@ -1,1 +1,21 @@
-<p>list works!</p>
+<div class="container-list">
+  <div class="text-center mb-4">
+    <h1>{{ titleList }}</h1>
+  </div>
+  <div class="container-list__items d-flex">
+    <div *ngFor="let items of listItem">
+      <div>
+        <h4>{{ items.hora }} HORAS</h4>
+        <ul>
+          <li *ngIf="items.quarto > 1">{{ items.quarto }} QUARTOS</li>
+          <li>{{ items.piscina | uppercase }}</li>
+          <li>{{ items.cozinha | uppercase }}</li>
+          <li *ngIf="items.churrasqueira">CHURRASQUEIRA GRANDE</li>
+          <li *ngIf="items.mesa">10 JOGOS DE MESAS</li>
+          <li>{{ items.banheiro }} BANHEIROS </li>
+          <li *ngIf="items.estacionamento">ESTACIONAMENTO</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
