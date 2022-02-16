@@ -1,0 +1,32 @@
+[
+    {
+        "hora": 8,
+        "piscina": "Piscina adulta & infantil", 
+        "quarto": 1,
+        "cozinha": "Freezer",
+        "mesa": false,
+        "churrasqueira": true,
+        "banheiro": 2,
+        "estacionamento": true
+    },
+    {
+        "hora": 12,
+        "piscina": "Piscina adulta & infantil", 
+        "quarto": 2,
+        "cozinha": "Freezer, geladeira e fogão",
+        "mesa": true,
+        "churrasqueira": true,
+        "banheiro": 2,
+        "estacionamento": true
+    },
+    {
+        "hora": 24,
+        "piscina": "Piscina adulta & infantil", 
+        "quarto": 4,
+        "cozinha": "Freezer, geladeira e fogão",
+        "mesa": true,
+        "churrasqueira": true,
+        "banheiro": 5,
+        "estacionamento": true
+    }
+]
