@@ -11,7 +11,7 @@ body {
 }
 
 .btn {
-  font-family: Verdana;
+  font-family: 'Segoe UI';
   font-weight: bold;
   padding: 8px 20px;
   color: #fff;
@@ -35,6 +35,24 @@ body {
   background: #fb7f16;
   border-bottom: 3px solid #1f2949;
 }
+
+.bt-form {
+  width: 125px;
+  border-radius: 20px;
+  height: 35px;
+  padding: 5px;
+  text-transform: uppercase;
+  margin: 5px 10px;
+}
+
+.success {
+  background: #50cf50;
+}
+
+.cancel {
+  background: #b56161;
+}
+
 
 .form-group {
   display: flex;

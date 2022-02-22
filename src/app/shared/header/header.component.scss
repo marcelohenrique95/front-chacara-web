@@ -9,6 +9,14 @@
         }
 }
 
+a:active {
+    color: #e7964f !important;    
+}
+
+a:focus {
+    color: #e7964f !important;    
+}
+
 @media screen and (max-width: 480px) {
     .header_container {
         justify-content: space-evenly;

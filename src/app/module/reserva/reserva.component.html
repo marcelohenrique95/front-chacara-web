@@ -1,38 +1,107 @@
-<div class="container-reserva card-form">
-  <h3 class="text-left">Faça sua reserva</h3>
-  <hr />
-  <div class="col-xs-12">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label>Nome completo:</label>
-          <input type="text" />
+<form id="formRegister" [formGroup]="orcamentoForm">
+  <div class="container-reserva card-form">
+    <h3 class="text-left">Orçamento</h3>
+    <hr />
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Tipo de evento:</label>
+            <select formControlName="selectTypeEvent">
+              <option *ngFor="let event of listaTpEventos" [value]="event.id">{{ event.label }}</option>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Telefone:</label>
-          <input type="tel" />
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Dia da semana:</label>
+            <select formControlName="selectDay">
+              <option *ngFor="let day of listaData" [value]="day.id">{{ day.label }}</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label>CPF:</label>
-          <input type="number" mask/>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Horário:</label>
+            <select formControlName="selectHour">
+              <option *ngFor="let hour of listaHora" [value]="hour.id">{{ hour.label }}</option>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <label>Email:</label>
-          <input type="email" />
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Nº de convidados:</label>
+            <select formControlName="selectNumberInvites">
+              <option *ngFor="let invit of listaConvidados" [value]="invit.id">{{ invit.label }}</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label>Tipo de evento:</label>
-          <select></select>
-        </div>
-        <div class="form-group">
-          <label>Endereço:</label>
-          <input type="text" />
+        <div class="row text-center mt-3">
+          <button
+            class="btn bt-form success"
+            type="button"
+            (click)="reservar()"
+          >
+            Confirmar
+          </button>
+          <button class="btn bt-form cancel" type="button" (click)="cancel()">
+            Limpar
+          </button>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="container-reserva card-form">
+    <h3 class="text-left">
+      Preencha os campos a seguir para finalizar sua reserva !
+    </h3>
+    <hr />
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Nome completo:</label>
+            <input type="text" />
+          </div>
+          <div class="form-group">
+            <label>Telefone:</label>
+            <input type="tel" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>CPF:</label>
+            <input type="number" mask />
+          </div>
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" />
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Tipo de evento:</label>
+            <select></select>
+          </div>
+          <div class="form-group">
+            <label>Endereço:</label>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="row text-center mt-3">
+          <button
+            class="btn bt-form success"
+            type="button"
+            (click)="reservar()"
+          >
+            Reservar
+          </button>
+          <button class="btn bt-form cancel" type="button" (click)="cancel()">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -3,6 +3,9 @@ export const menu = [
         label: 'Home', link: '/home'
     },
     {
+        label: 'Clientes', link: '/cliente' 
+    },
+    {
         label: 'Reserva', link: '/reserva'
     },
     {

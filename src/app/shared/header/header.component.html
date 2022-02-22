@@ -1,5 +1,5 @@
 <div class="header_container d-flex mt-2">
-    <div *ngFor="let opt of menu_options">
+    <div class="mr-3" *ngFor="let opt of menu_options">
         <a [routerLink]="opt.link" class="mr-2">{{ opt.label | uppercase }}</a>
     </div>
 </div>

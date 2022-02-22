@@ -8,10 +8,10 @@
   </section>
   <section class="container-home__list d-flex">
     <div *ngFor="let item of images">
-      <app-card *ngIf="showInfos"><img [src]="item.urlImg" /></app-card>
+      <app-card><img [src]="item.urlImg" /></app-card>
     </div>
   </section>
   <section class="container-home__info">
-    <app-list [listItem]="listItemPerDay" *ngIf="showInfos"></app-list>
+    <app-list [listItem]="listItemPerDay"></app-list>
   </section>
 </div>

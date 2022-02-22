@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   conhecer():void {
-    this.showInfos = true;
+    window.scrollTo(1000, 1000)
   }
 
 }
