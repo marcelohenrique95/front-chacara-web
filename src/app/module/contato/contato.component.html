@@ -1,1 +1,12 @@
-<p>contato works!</p>
+<div class="container card-form">
+  <nav class="mt-2">
+    <a
+      *ngFor="let nav of navigationOption"
+      [routerLink]="nav.link"
+      routerLinkActive="activa-tab"
+      >{{ nav.label | uppercase }}</a
+    >
+  </nav>
+  <hr />
+  <router-outlet></router-outlet>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { navigation } from 'src/app/static/navigation-contact';
 
 @Component({
   selector: 'app-contato',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contato.component.scss']
 })
 export class ContatoComponent implements OnInit {
+
+  public navigationOption = navigation;
 
   constructor() { }
 
