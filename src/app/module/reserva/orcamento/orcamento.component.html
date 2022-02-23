@@ -1,0 +1,65 @@
+<form id="formRegister" [formGroup]="orcamentoForm">
+  <h3 class="text-left">Orçamento</h3>
+  <hr />
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>Tipo de evento:</label>
+          <select formControlName="selectTypeEvent">
+            <option *ngFor="let event of listaTpEventos" [value]="event.id">
+              {{ event.label }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>Dia da semana:</label>
+          <select formControlName="selectDay">
+            <option *ngFor="let day of listaData" [value]="day.id">
+              {{ day.label }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>Horário:</label>
+          <select formControlName="selectHour">
+            <option *ngFor="let hour of listaHora" [value]="hour.id">
+              {{ hour.label }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>Nº de convidados:</label>
+          <select formControlName="selectNumberInvites">
+            <option *ngFor="let invit of listaConvidados" [value]="invit.id">
+              {{ invit.label }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <button
+          class="btn bt-form success"
+          type="button"
+          [disabled]="!orcamentoForm.valid"
+          (click)="confirma()"
+        >
+          Confirmar
+        </button>
+        <button
+          class="btn bt-form cancel"
+          type="button"
+          (click)="clearInputs()"
+        >
+          Limpar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,6 +1,7 @@
 .header_container {
-    justify-content: space-around;
+    justify-content: space-evenly;
     min-width: 400px;
+    max-width: 45%;
         a {
             color: #c5c5c5;
             text-decoration: none;
@@ -9,11 +10,7 @@
         }
 }
 
-a:active {
-    color: #e7964f !important;    
-}
-
-a:focus {
+.active {
     color: #e7964f !important;    
 }
 

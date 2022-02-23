@@ -47,10 +47,19 @@ body {
 
 .success {
   background: #50cf50;
+  &:hover {
+    background: #38a338;
+    transition: 0.2s;
+  }
 }
 
 .cancel {
-  background: #b56161;
+  background: #913c3c;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1.0;
+    transition: 0.2s;
+  }
 }
 
 
