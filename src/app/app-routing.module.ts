@@ -4,8 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./module/login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'home',
@@ -22,6 +26,10 @@ const routes: Routes = [
   {
     path: 'contato',
     loadChildren: () => import('./module/contato/contato.module').then(m => m.ContatoModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./module/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   }
 ];
 

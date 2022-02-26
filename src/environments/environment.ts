@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url: {
+    orcamentoUrl: 'http://localhost:8080/api/v1/orcamento',
+    clienteUrl: 'http://localhost:8080/api/v1/client',
+    reservaUrl: 'http://localhost:8080/reserve'
+  }
 };
 
 /*

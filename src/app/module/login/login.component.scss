@@ -1,0 +1,56 @@
+.container-login {
+    justify-content: center;
+    background: #3d597c;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 100%;
+
+    &__option {
+        box-shadow: 8px 2px 10px 0px #050618;
+        background: #dfdfdf;
+        width: 60%;
+        margin: auto;
+    }
+
+    &__option-items {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 15px 125px;
+        margin: auto;
+    }
+
+    &__option-logo {
+        min-height: 250px;
+        background-repeat: no-repeat;
+        background-image: url('./../../../assets/image/chacara-logo.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .container-login {
+        border: none;
+
+        &__option {
+            width: 100% !important;
+            box-shadow: none;
+            background: transparent;
+        }
+
+        &__option-items {
+            margin: 90px 0px !important;
+        }
+
+        &__option-logo {
+            min-height: 0px;
+            background: none;
+        }
+    }
+}

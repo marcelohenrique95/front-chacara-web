@@ -1,4 +1,4 @@
-<nav>
+<nav *ngIf="checkLogin()">
   <app-header></app-header>
 </nav>
 <router-outlet></router-outlet>
