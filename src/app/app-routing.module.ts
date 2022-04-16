@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./module/info/info.module').then(m => m.InfoModule)
   },
   {
+    path: 'orcamento',
+    loadChildren: () => import('./module/orcamento/orcamento.module').then(m => m.OrcamentoModule)
+  },
+  {
     path: 'reserva',
     loadChildren: () => import('./module/reserva/reserva.module').then(m => m.ReservaModule)
   },

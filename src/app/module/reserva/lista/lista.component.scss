@@ -1,0 +1,23 @@
+hr {
+    border: 2px solid #fb7f16;
+}
+
+table {
+    width: 90%;
+    background: #14294ef2;
+    border-BOTTOM: 2px solid #fb7f16;
+    color: #fff;
+
+    .head-table {
+        border-bottom: 1px solid #fb7f16;
+    }
+
+    .body-table {
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+    }
+}
+
+p {
+    color: #757c95;
+}

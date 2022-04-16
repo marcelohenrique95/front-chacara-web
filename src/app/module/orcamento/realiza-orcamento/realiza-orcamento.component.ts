@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { dias, eventos, horario, invites } from 'src/app/static/form-orcamento';
 
 @Component({
-  selector: 'app-orcamento',
-  templateUrl: './orcamento.component.html',
-  styleUrls: ['./orcamento.component.scss']
+  selector: 'app-realiza-orcamento',
+  templateUrl: './realiza-orcamento.component.html',
+  styleUrls: ['./realiza-orcamento.component.scss']
 })
-export class OrcamentoComponent implements OnInit {
+export class RealizaOrcamentoComponent implements OnInit {
 
   public orcamentoForm!: FormGroup;
 

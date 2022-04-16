@@ -1,0 +1,39 @@
+<div>
+  <h3>Lista de Reservas</h3>
+</div>
+<hr />
+<div class="row mb-2">
+  <div class="d-flex justify-content-end">
+    <button class="btn bt-secondary">NOVA RESERVA</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 d-flex justify-content-center">
+    <table>
+      <tr class="head-table">
+        <th>#</th>
+        <th *ngFor="let item of menu_list">{{ item }}</th>
+      </tr>
+      <tr class="body-table" *ngFor="let dados of mock">
+        <td>
+          <a>
+            <i class="fa-solid fa-angle-left"></i>
+          </a>
+        </td>
+        <td>{{ dados.nome | uppercase }}</td>
+        <td>{{ dados.data }}</td>
+        <td>{{ dados.dataExit }}</td>
+        <td>{{ dados.situacao }}</td>
+        <td>R$ {{ dados.valor }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="row text-center mt-3">
+  <p>
+    Existe um total de <strong>{{ menu_list.length }}</strong> reservas.
+  </p>
+</div>
+<div *ngIf="menu_list.length === 0">
+  <p>Não há reservas no momento.</p>
+</div>

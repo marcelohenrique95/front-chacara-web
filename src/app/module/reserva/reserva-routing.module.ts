@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OrcamentoComponent } from './orcamento/orcamento.component';
-import { RealizaReservaComponent } from './realiza-reserva/realiza-reserva.component';
+import { ReservaFormComponent } from './reserva-form/reserva-form.component';
+import { ListaComponent } from './lista/lista.component';
 import { ReservaComponent } from './reserva.component';
 
 const routes: Routes = [
@@ -9,8 +9,18 @@ const routes: Routes = [
     path: '',
     component: ReservaComponent,
     children: [
-      { path: '', component: OrcamentoComponent},
-      { path: 'realiza-reserva', component: RealizaReservaComponent},
+      {
+        path: '',
+        component: ListaComponent
+      },
+      {
+        path: 'lista-reserva',
+        component: ListaComponent
+      },
+      {
+        path: 'cadastro-reserva',
+        component: ReservaFormComponent
+      }
     ]
   }
 ];

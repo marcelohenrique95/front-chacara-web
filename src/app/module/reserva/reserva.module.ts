@@ -3,22 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { ReservaRoutingModule } from './reserva-routing.module';
 import { ReservaComponent } from './reserva.component';
-import { CpfPipe } from 'src/app/core/pipe/cpf.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
-import { OrcamentoComponent } from './orcamento/orcamento.component';
-import { RealizaReservaComponent } from './realiza-reserva/realiza-reserva.component';
+import { ReservaFormComponent } from './reserva-form/reserva-form.component';
+import { ListaComponent } from './lista/lista.component';
 
 
 @NgModule({
   declarations: [
     ReservaComponent,
-    CpfPipe,
-    OrcamentoComponent,
-    RealizaReservaComponent
+    ReservaFormComponent,
+    ListaComponent
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     ReservaRoutingModule
   ]
 })
