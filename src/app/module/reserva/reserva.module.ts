@@ -1,3 +1,5 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +17,9 @@ import { ListaComponent } from './lista/lista.component';
   ],
   imports: [
     CommonModule,
-    ReservaRoutingModule
+    ReservaRoutingModule,
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class ReservaModule { }

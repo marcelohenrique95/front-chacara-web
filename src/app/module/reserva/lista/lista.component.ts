@@ -28,6 +28,11 @@ export class ListaComponent implements OnInit {
 
   }
 
+  newReserva() {
+    this.router.navigate(['reserva/cadastro-reserva']);
+
+  }
+
   detalheReserva() {
     
   }

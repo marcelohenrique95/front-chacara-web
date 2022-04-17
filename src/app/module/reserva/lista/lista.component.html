@@ -4,7 +4,7 @@
 <hr />
 <div class="row mb-2">
   <div class="d-flex justify-content-end">
-    <button class="btn bt-secondary">NOVA RESERVA</button>
+    <button class="btn bt-secondary" (click)="newReserva()">NOVA RESERVA</button>
   </div>
 </div>
 <div class="row">
@@ -17,13 +17,22 @@
       <tr class="body-table" *ngFor="let dados of mock">
         <td>
           <a>
-            <i class="fa-solid fa-angle-left"></i>
+            <i class="fa-solid fa-eye"></i>
           </a>
         </td>
         <td>{{ dados.nome | uppercase }}</td>
         <td>{{ dados.data }}</td>
         <td>{{ dados.dataExit }}</td>
-        <td>{{ dados.situacao }}</td>
+        <td>
+          <i
+            [ngClass]="
+              dados.situacao == 1
+                ? 'fa-solid fa-circle-check'
+                : 'fa-solid fa-exclamation'
+            "
+            [ngStyle]="{ color: dados.situacao === 1 ? '#85ff85' : '#ffff82' }"
+          ></i>
+        </td>
         <td>R$ {{ dados.valor }}</td>
       </tr>
     </table>

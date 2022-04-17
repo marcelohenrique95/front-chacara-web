@@ -10,11 +10,23 @@ table {
 
     .head-table {
         border-bottom: 1px solid #fb7f16;
+
+        th {
+            text-align: center;
+        }
     }
 
     .body-table {
         border-bottom: 1px solid #fff;
         cursor: pointer;
+
+        td {
+            text-align: center;
+        }
+    }
+
+    .fa-pen-to-square {
+        color: #fb7f16;
     }
 }
 
