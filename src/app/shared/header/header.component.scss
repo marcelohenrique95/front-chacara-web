@@ -16,7 +16,8 @@
 
 @media screen and (max-width: 480px) {
     .header_container {
-        justify-content: space-evenly;
+        flex-direction: column;
+        text-align: center;
         min-width: 360px;
     }
 }

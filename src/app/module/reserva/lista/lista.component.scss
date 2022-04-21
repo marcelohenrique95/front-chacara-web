@@ -2,6 +2,14 @@ hr {
     border: 2px solid #fb7f16;
 }
 
+.btn-section {
+    justify-content: end;
+
+    button {
+        margin-right: 60px;
+    }
+}
+
 table {
     width: 90%;
     background: #14294ef2;
@@ -32,4 +40,22 @@ table {
 
 p {
     color: #757c95;
+}
+
+@media screen and (max-width: 480px) {
+    .btn-section {
+        justify-content: center;
+        button {
+            margin-right: 0;
+        }
+    }
+
+    table {
+        th:nth-child(1), th:nth-child(4), th:nth-child(6) {
+            display: none;
+        }
+        td:nth-child(1), td:nth-child(4), td:nth-child(6){
+            display: none;
+        }
+    }
 }

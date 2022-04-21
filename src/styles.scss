@@ -95,3 +95,11 @@ body {
     border-radius: 5px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .card-form {
+      padding: 0;
+      border-bottom: 5px solid #fb7f16;
+      border-left: none;
+  }
+}
