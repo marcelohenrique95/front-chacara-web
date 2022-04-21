@@ -1,48 +1,61 @@
 <div>
-  <h3>Lista de Reservas</h3>
-</div>
-<hr />
-<div class="row mb-2">
-  <div class="d-flex justify-content-end">
-    <button class="btn bt-secondary" (click)="newReserva()">NOVA RESERVA</button>
+  <div>
+    <h3>Lista de Reservas</h3>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 d-flex justify-content-center">
-    <table>
-      <tr class="head-table">
-        <th>#</th>
-        <th *ngFor="let item of menu_list">{{ item }}</th>
-      </tr>
-      <tr class="body-table" *ngFor="let dados of mock">
-        <td>
-          <a>
-            <i class="fa-solid fa-eye"></i>
-          </a>
-        </td>
-        <td>{{ dados.nome | uppercase }}</td>
-        <td>{{ dados.data }}</td>
-        <td>{{ dados.dataExit }}</td>
-        <td>
-          <i
-            [ngClass]="
-              dados.situacao == 1
-                ? 'fa-solid fa-circle-check'
-                : 'fa-solid fa-exclamation'
-            "
-            [ngStyle]="{ color: dados.situacao === 1 ? '#85ff85' : '#ffff82' }"
-          ></i>
-        </td>
-        <td>R$ {{ dados.valor }}</td>
-      </tr>
-    </table>
+  <hr />
+  <div *ngIf="!loader" class="row mb-2">
+    <div class="d-flex justify-content-end">
+      <button class="btn bt-secondary" (click)="newReserva()">
+        NOVA RESERVA
+      </button>
+    </div>
   </div>
-</div>
-<div class="row text-center mt-3">
-  <p>
-    Existe um total de <strong>{{ menu_list.length }}</strong> reservas.
-  </p>
-</div>
-<div *ngIf="menu_list.length === 0">
-  <p>Não há reservas no momento.</p>
+  <div class="row">
+    <div class="col-xs-12 d-flex justify-content-center">
+      <div
+        class="spinner-grow text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+        *ngIf="loader"
+      >
+      </div>
+      <table *ngIf="!loader">
+        <tr class="head-table">
+          <th>#</th>
+          <th *ngFor="let item of menu_list">{{ item }}</th>
+        </tr>
+        <tr class="body-table" *ngFor="let dados of listaReserva">
+          <td>
+            <a>
+              <i class="fa-solid fa-eye"></i>
+            </a>
+          </td>
+          <td>{{ dados.cpfCliente }}</td>
+          <td>{{ dados.dataEntrada | date: 'dd/MM/yyyy'}}</td>
+          <td>{{ dados.dataSaida | date: 'dd/MM/yyyy' }}</td>
+          <td>
+            <i
+              [ngClass]="
+                dados.situacao == 1
+                  ? 'fa-solid fa-circle-check'
+                  : 'fa-solid fa-exclamation'
+              "
+              [ngStyle]="{
+                color: dados.situacao === 1 ? '#85ff85' : '#ffff82'
+              }"
+            ></i>
+          </td>
+          <td>{{ dados.valor === null ? 0 : dados.valor | currency : 'R$' }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="!loader" class="row text-center mt-3">
+    <p>
+      Existe um total de <strong>{{ menu_list.length }}</strong> reservas.
+    </p>
+  </div>
+  <div *ngIf="menu_list.length === 0">
+    <p>Não há reservas no momento.</p>
+  </div>
 </div>

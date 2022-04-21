@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   url: {
+    apiBaseUrl: 'http://localhost:8080/v1/',
     orcamentoUrl: 'http://localhost:8080/api/v1/orcamento',
     clienteUrl: 'http://localhost:8080/api/v1/client',
     reservaUrl: 'http://localhost:8080/reserve'

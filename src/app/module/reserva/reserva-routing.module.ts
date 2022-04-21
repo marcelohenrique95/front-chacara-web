@@ -1,3 +1,4 @@
+import { ReservaDetailComponent } from './reserva-detail/reserva-detail.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReservaFormComponent } from './reserva-form/reserva-form.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'cadastro-reserva',
         component: ReservaFormComponent
+      },
+      {
+        path: ':id/reserva-detail',
+        component: ReservaDetailComponent
       }
     ]
   }

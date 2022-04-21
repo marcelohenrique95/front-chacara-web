@@ -1,3 +1,4 @@
+import { Reserva } from './../../../core/model/reserva.model';
 import { ReservaService } from './../../../core/service/reserva.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -5,36 +6,35 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.scss']
+  styleUrls: ['./lista.component.scss'],
 })
 export class ListaComponent implements OnInit {
-
   menu_list = ['Cliente', 'Data Entrada', 'Data Saída', 'Situação', 'Valor'];
+  listaReserva: Reserva[] = [];
 
-  mock = [
-    {nome: 'Cliente teste uummmm', data: '03/05/2022', dataExit: '03/05/2022', situacao: 0, valor: '800,00'},
-    {nome: 'Cliente teste doiiis', data: '20/05/2022', dataExit: '03/05/2022', situacao: 1, valor: '720,00'},
-    {nome: 'Cliente teste tress', data: '28/05/2022', dataExit: '03/05/2022', situacao: 0, valor: '900,00'},
-    {nome: 'Cliente teste quatroo', data: '10/06/2022', dataExit: '03/05/2022', situacao: 1, valor: '1.120,00'},
-    {nome: 'Cliente teste cincoo', data: '18/07/2022', dataExit: '03/05/2022', situacao: 1, valor: '600,00'},
-  ]
+  loader: boolean = true;
 
-  constructor(private router: Router, private reservaService: ReservaService) { }
+  constructor(private router: Router, private reservaService: ReservaService) {}
 
   ngOnInit(): void {
+    this.getListaReservas();
   }
 
   getListaReservas() {
-
+    this.reservaService.getList().subscribe((res) => {
+      if (res) {
+        this.listaReserva = res;
+        console.log(this.listaReserva);
+        setTimeout(() => {
+          this.loader = false;
+        }, 1000);
+      }
+    });
   }
 
   newReserva() {
     this.router.navigate(['reserva/cadastro-reserva']);
-
   }
 
-  detalheReserva() {
-    
-  }
-
+  detalheReserva() {}
 }

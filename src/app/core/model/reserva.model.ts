@@ -1,12 +1,10 @@
-import { Pessoa } from './pessoa.model';
-
 export class Reserva {
     id: number;
-    pessoa: Pessoa;
+    cpfCliente: number;
     tpEvento: string;
+    convidados: number;
     dataEntrada: Date;
     dataSaida: Date;
     situacao: number;
-    numConvidados: number;
     valor: number;
 }

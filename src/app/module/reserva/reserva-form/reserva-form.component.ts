@@ -1,10 +1,11 @@
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Reserva } from './../../../core/model/reserva.model';
-import { eventos } from './../../../static/form-orcamento';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Reserva } from './../../../core/model/reserva.model';
+import { eventos } from './../../../static/form-orcamento';
 import { ReservaService } from './../../../core/service/reserva.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reserva-form',
@@ -15,15 +16,14 @@ export class ReservaFormComponent implements OnInit {
 
   public listaTpEventos = eventos;
 
-  formReserva: FormGroup;
-
-  reserva: Reserva;
+  form: FormGroup;
 
   constructor(
     private router: Router,
     private location: Location,
     private fb: FormBuilder,
-    private reservaService: ReservaService
+    private reservaService: ReservaService,
+    private toastr: ToastrService
   ) {
   }
 
@@ -33,45 +33,56 @@ export class ReservaFormComponent implements OnInit {
   }
 
   initForm() {
-    this.formReserva = this.fb.group({
-      nome: [null, Validators.required],
-      telefone: [null, Validators.required],
-      email: [null, Validators.required],
-      cpf: [null, Validators.required],
-      endereco: [null, Validators.required],
-      tpEvento: [null, Validators.required],
-      dataInicio: [null, Validators.required],
-      dataFim: [null, Validators.required],
-      situacao: [null, Validators.required],
-      numConvidados: [null, Validators.required],
-    });
+    this.form = new FormGroup({
+      tpEvento: new FormControl([null, Validators.required]),
+      dataInicio: new FormControl([null, Validators.required]),
+      dataFim: new FormControl([null, Validators.required]),
+      situacao: new FormControl([null, Validators.required]),
+      numConvidados: new FormControl([null, Validators.required]),
+      valor: new FormControl([null, Validators.required]),
+      cpfCliente: new FormControl([null, Validators.required]),
+    })
   }
 
   getReserva(): Reserva {
-    this.reserva = new Reserva();
-    this.reserva.pessoa.nome = this.formReserva.get('nome')!.value;
-    this.reserva.pessoa.telefone = this.formReserva.get('telefone')!.value;
-    this.reserva.pessoa.email = this.formReserva.get('email')!.value;
-    this.reserva.pessoa.endereco = this.formReserva.get('endereco')!.value;
-    this.reserva.tpEvento = this.formReserva.get('tpEvento')!.value;
-    this.reserva.dataEntrada = this.formReserva.get('dataInicio')!.value;
-    this.reserva.dataSaida = this.formReserva.get('dataFim')!.value;
-    this.reserva.situacao = this.formReserva.get('situacao')!.value;
-    this.reserva.numConvidados = this.formReserva.get('numConvidados')!.value;
-
-    console.log(this.reserva);
-    return this.reserva;
+    const data = new Reserva();
+    data.cpfCliente = this.form.controls['cpfCliente'].value;
+    data.tpEvento = this.form.controls['tpEvento'].value;
+    data.dataEntrada = this.form.controls['dataInicio'].value;
+    data.dataSaida = this.form.controls['dataFim'].value;
+    data.situacao = this.form.controls['situacao'].value;
+    data.convidados = this.form.controls['numConvidados'].value;
+    data.valor = this.form.controls['valor'].value;
+    console.log(data);
+    return data;
   }
 
   reservar() {
     const reservaForm = this.getReserva();
+    this.reservaService.create(reservaForm).subscribe(res => {
+      this.toastr.success('Reserva', 'Reserva cria com Sucesso!');
+      if(res) {
+        console.log('Criou a reserva - ', res);
+      }
+    })
   }
 
-  cancel() {
+  clearInputs(): void {
+    this.form.controls['cpfCliente'].setValue('');
+    this.form.controls['tpEvento'].setValue('');
+    this.form.controls['dataInicio'].setValue('');
+    this.form.controls['dataFim'].setValue('');
+    this.form.controls['situacao'].setValue('');
+    this.form.controls['numConvidados'].setValue('');
+    this.form.controls['valor'].setValue('');
+    this.toastr.error('Os campos de preenchimento foram limpos!');
+  }
+
+  cancel(): void {
     this.location.back();
   }
 
   get f() {
-    return this.formReserva.controls;
+    return this.form.controls;
   }
 }

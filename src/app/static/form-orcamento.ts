@@ -20,12 +20,12 @@ export const horario = [
 ];
 
 export const eventos = [
-    {id: 1, label: 'Aniversário'},
-    {id: 2, label: 'Casamento'},
-    {id: 3, label: 'Churrasco'},
-    {id: 4, label: 'Chá de bebê'},
-    {id: 5, label: 'Retiro de Igreja'},
-    {id: 6, label: 'Familiar'}
+    {value: 'ANIVERSARIO', label: 'Aniversário'},
+    {value: 'CASAMENTO', label: 'Casamento'},
+    {value: 'CHURRASCO', label: 'Churrasco'},
+    {value: 'CHADEBEBE', label: 'Chá de bebê'},
+    {value: 'RETIRO', label: 'Retiro de Igreja'},
+    {value: 'FAMILIAR', label: 'Familiar'}
 ];
 
 export const invites = [

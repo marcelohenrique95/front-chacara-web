@@ -7,7 +7,7 @@
         <div class="form-group">
           <label>Tipo de evento:</label>
           <select formControlName="selectTypeEvent">
-            <option *ngFor="let event of listaTpEventos" [value]="event.id">
+            <option *ngFor="let event of listaTpEventos" [value]="event.value">
               {{ event.label }}
             </option>
           </select>

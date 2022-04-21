@@ -1,21 +1,15 @@
-import { HttpClient } from '@angular/common/http'; 
+import { Reserva } from './../model/reserva.model';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BaseService } from './base.service';
 
 @Injectable()
-export class ReservaService {
+export class ReservaService extends BaseService<Reserva> {
+  constructor(public http: HttpClient) {
+    super(http);
+  }
 
-   constructor(private http: HttpClient) {}
-
-  
-   listaReservas() {
-       return;
-   }
-
-   reservar() {
-       return;
-   }
-
-   updateReserva() {
-    return;
-   }
+  public getPathModule(): string {
+    return 'reserva/';
+  }
 }

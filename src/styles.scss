@@ -1,5 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~bootstrap/scss/bootstrap';
+@import '~ngx-toastr/toastr';
 
 body {
   background: #0a0f28;
@@ -63,6 +64,9 @@ body {
   }
 }
 
+.container {
+  padding: 10px 40px;
+}
 
 .form-group {
   display: flex;
