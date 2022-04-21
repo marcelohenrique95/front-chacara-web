@@ -1,3 +1,4 @@
+import { ClienteService } from './core/service/cliente.service';
 import { ReservaService } from './core/service/reserva.service';
 import { OrcamentoService } from './core/service/orcamento.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,7 +31,8 @@ import { NgxMaskModule } from 'ngx-mask';
   providers: [
     ItemsIncludeService,
     OrcamentoService,
-    ReservaService
+    ReservaService,
+    ClienteService
   ],
   bootstrap: [AppComponent]
 })

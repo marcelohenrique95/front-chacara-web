@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
 import { ListComponent } from './list/list.component';
+import { ContainerPageComponent } from './container-page/container-page.component';
 
 
 
@@ -13,11 +14,13 @@ import { ListComponent } from './list/list.component';
     HeaderComponent,
     CardComponent,
     ListComponent,
+    ContainerPageComponent,
   ],
   exports : [
     HeaderComponent,
     CardComponent,
     ListComponent,
+    ContainerPageComponent,
   ],
   imports: [
     CommonModule,
