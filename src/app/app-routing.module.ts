@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./module/reserva/reserva.module').then(m => m.ReservaModule)
   },
   {
+    path: 'cliente',
+    loadChildren: () => import('./module/cliente/cliente.module').then(m => m.ClienteModule)
+  },
+  {
     path: 'contato',
     loadChildren: () => import('./module/contato/contato.module').then(m => m.ContatoModule)
   },

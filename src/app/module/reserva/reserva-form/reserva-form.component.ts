@@ -6,6 +6,7 @@ import { Reserva } from './../../../core/model/reserva.model';
 import { eventos } from './../../../static/form-orcamento';
 import { ReservaService } from './../../../core/service/reserva.service';
 import { ToastrService } from 'ngx-toastr';
+import { ReservaConstants } from '../reserva.constants';
 
 @Component({
   selector: 'app-reserva-form',
@@ -60,7 +61,7 @@ export class ReservaFormComponent implements OnInit {
   reservar() {
     const reservaForm = this.getReserva();
     this.reservaService.create(reservaForm).subscribe(res => {
-      this.toastr.success('Reserva', 'Reserva cria com Sucesso!');
+      this.toastr.success(ReservaConstants.MSG_SUCESSO_FORM_RESERVA);
       if(res) {
         console.log('Criou a reserva - ', res);
       }
@@ -75,7 +76,7 @@ export class ReservaFormComponent implements OnInit {
     this.form.controls['situacao'].setValue('');
     this.form.controls['numConvidados'].setValue('');
     this.form.controls['valor'].setValue('');
-    this.toastr.error('Os campos de preenchimento foram limpos!');
+    this.toastr.info(ReservaConstants.MSG_CAMPOS_RESERVA);
   }
 
   cancel(): void {
