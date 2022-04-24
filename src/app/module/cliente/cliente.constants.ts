@@ -6,7 +6,7 @@ export abstract class ClienteConstants {
   public static readonly HEADER_TITLE_LISTA_CLIENTE = [
     'Nome',
     'Telefone',
-    'Status',
+    'Email',
   ];
 
   public static readonly MSG_LIST_CLIENTES_VAZIA =

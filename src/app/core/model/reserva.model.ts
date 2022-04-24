@@ -7,4 +7,5 @@ export class Reserva {
     dataSaida: Date;
     situacao: number;
     valor: number;
+    idPessoa: number;
 }

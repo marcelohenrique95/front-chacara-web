@@ -11,6 +11,9 @@ import { ClienteConstants } from '../cliente.constants';
   styleUrls: ['./lista.component.scss'],
 })
 export class ListaComponent implements OnInit {
+
+  menu_list = ClienteConstants.HEADER_TITLE_LISTA_CLIENTE;
+
   titleList = ClienteConstants.TITLE_LIST_CLIENTES;
 
   listaCliente: Cliente[] = [];

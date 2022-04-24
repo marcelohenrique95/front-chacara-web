@@ -33,7 +33,7 @@ body {
 }
 
 .bt-secondary {
-  background: #fb7f16;
+  background: #c7c7c7;
   color: #1f2949;
   border-bottom: 3px solid #1f2949;
 }
@@ -93,6 +93,40 @@ body {
     max-width: 300px;
     height: 30px;
     border-radius: 5px;
+  }
+}
+
+table {
+  width: 90%;
+  background: #fffffff2;
+  border-bottom: 2px solid #1f2949;
+  color: #5e5e5e;
+  box-shadow: 2px 1px 5px #b9b9b9;
+
+  .head-table {
+      border-bottom: 1px solid #1f2949;
+
+      th {
+          text-align: center;
+      }
+  }
+
+  .body-table {
+      border-bottom: 1px solid #e3e3e3;
+      cursor: pointer;
+
+      td {
+          text-align: center;
+      }
+
+      &:hover {
+        background: #ebebeb;
+        transition: 0.5s;
+      }
+  }
+
+  .fa-pen-to-square {
+      color: #fb7f16;
   }
 }
 
