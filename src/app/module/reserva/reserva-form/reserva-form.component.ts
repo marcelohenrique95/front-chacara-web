@@ -15,6 +15,8 @@ import { ReservaConstants } from '../reserva.constants';
 })
 export class ReservaFormComponent implements OnInit {
 
+  titlePage = ReservaConstants.TITLE_FORM_RESERVA;
+
   public listaTpEventos = eventos;
 
   form: FormGroup;
@@ -30,7 +32,6 @@ export class ReservaFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    console.log('Entrou no form');
   }
 
   initForm() {

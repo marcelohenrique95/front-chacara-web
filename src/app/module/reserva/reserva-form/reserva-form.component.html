@@ -1,102 +1,111 @@
-<h3 class="text-left">Cadastrar uma Reserva no Sistema</h3>
-<hr />
-<form [formGroup]="form">
-  <div class="col-xs-12">
-    <div class="row">
-      <div class="col-sm-4">
+<app-container-page [title]="titlePage">
+  <form [formGroup]="form">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="tpEvento">Tipo de evento:</label>
+            <select id="tpEvento" formControlName="tpEvento">
+              <option
+                *ngFor="let event of listaTpEventos"
+                [value]="event.value"
+              >
+                {{ event.label }}
+              </option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label>Tipo de evento:</label>
-          <select formControlName="tpEvento">
-            <option *ngFor="let event of listaTpEventos" [value]="event.value">
-              {{ event.label }}
-            </option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Valor:</label>
-          <input
-            type="number"
-            id="valor"
-            formControlName="valor"
-            placeholder="Digite o valor"
-          />
-          <!-- <div *ngIf="f.nome.touched && f.nome.invalid">
+          <div class="form-group">
+            <label for="valor">Valor:</label>
+            <input
+              type="number"
+              id="valor"
+              formControlName="valor"
+              placeholder="Digite o valor"
+            />
+            <!-- <div *ngIf="f.nome.touched && f.nome.invalid">
             <small class="text-danger" *ngIf="f.nome.errors?.required">
               Nome é requerido!
             </small>
           </div>-->
-        </div>
-
-        <div class="form-group">
-          <label>CPF do Cliente:</label>
-          <input
-            type="number"
-            id="valor"
-            min="11"
-            formControlName="cpfCliente"
-            placeholder="Digite o CPF"
-            mask="000.000.000-00"
-          />
-        </div>
-        
-      </div>
-
-      <div class="col-sm-4">
- 
-        <div class="form-group">
-          <label>Data Entrada:</label>
-          <input formControlName="dataInicio" type="date" />
-        </div>
-
-        <div class="form-group">
-          <label>Data Saída:</label>
-          <input formControlName="dataFim" type="date" />
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label>Situação:</label>
-
-          <div class="form-radio">
-            <input type="radio" value="0" formControlName="situacao" />
-            <span>Pagou metade</span>
           </div>
 
-          <div class="form-radio">
-            <input type="radio" value="1" formControlName="situacao" />
-            <span>Pago</span>
+          <div class="form-group">
+            <label for="cpfCliente">CPF do Cliente:</label>
+            <input
+              type="number"
+              id="cpfCliente"
+              min="11"
+              formControlName="cpfCliente"
+              placeholder="Digite o CPF"
+              mask="000.000.000-00"
+            />
           </div>
         </div>
 
-        <div class="form-group">
-          <label>Nº de Convidados:</label>
-
-          <div class="form-radio">
-            <input type="radio" value="30" formControlName="numConvidados" />
-            <span>30</span>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Data Entrada:</label>
+            <input formControlName="dataInicio" type="date" />
           </div>
 
-          <div class="form-radio">
-            <input type="radio" value="50" formControlName="numConvidados" />
-            <span>50</span>
-          </div>
-
-          <div class="form-radio">
-            <input type="radio" value="80" formControlName="numConvidados" />
-            <span>80</span>
+          <div class="form-group">
+            <label>Data Saída:</label>
+            <input formControlName="dataFim" type="date" />
           </div>
         </div>
-      </div>
-      <div class="row justify-content-center mt-3">
-        <button type="button" class="btn bt-form success" [disabled]="!form.valid" (click)="reservar()">
-          Reservar
-        </button>
-        <button type="button" class="btn bt-form cancel" (click)="clearInputs()">
-          Limpar
-        </button>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Situação:</label>
+
+            <div class="form-radio">
+              <input type="radio" value="0" formControlName="situacao" />
+              <span>Pagou metade</span>
+            </div>
+
+            <div class="form-radio">
+              <input type="radio" value="1" formControlName="situacao" />
+              <span>Pago</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Nº de Convidados:</label>
+
+            <div class="form-radio">
+              <input type="radio" value="30" formControlName="numConvidados" />
+              <span>30</span>
+            </div>
+
+            <div class="form-radio">
+              <input type="radio" value="50" formControlName="numConvidados" />
+              <span>50</span>
+            </div>
+
+            <div class="form-radio">
+              <input type="radio" value="80" formControlName="numConvidados" />
+              <span>80</span>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+          <button
+            type="button"
+            class="btn bt-form success"
+            [disabled]="!form.valid"
+            (click)="reservar()"
+          >
+            Reservar
+          </button>
+          <button
+            type="button"
+            class="btn bt-form cancel"
+            (click)="clearInputs()"
+          >
+            Limpar
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</form>
+  </form>
+</app-container-page>
