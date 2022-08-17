@@ -14,18 +14,17 @@ import { Subscription } from 'rxjs';
 export class ListaComponent implements OnInit, OnDestroy {
 
   menu_list = ClienteConstants.HEADER_TITLE_LISTA_CLIENTE;
-
   titleList = ClienteConstants.TITLE_LIST_CLIENTES;
 
   listaCliente: Cliente[] = [];
 
   loader: boolean = true;
+  private subs: Subscription;
 
   constructor(
     private router: Router,
     private clienteService: ClienteService,
     private notification: ToastrService,
-    private subs: Subscription
   ) {}
 
   ngOnInit(): void {

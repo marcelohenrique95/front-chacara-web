@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
@@ -7,31 +7,37 @@ import { eventos } from './../../../static/form-orcamento';
 import { ReservaService } from './../../../core/service/reserva.service';
 import { ToastrService } from 'ngx-toastr';
 import { ReservaConstants } from '../reserva.constants';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-reserva-form',
   templateUrl: './reserva-form.component.html',
   styleUrls: ['./reserva-form.component.scss'],
 })
-export class ReservaFormComponent implements OnInit {
+export class ReservaFormComponent implements OnInit, OnDestroy {
 
   titlePage = ReservaConstants.TITLE_FORM_RESERVA;
 
   public listaTpEventos = eventos;
 
   form: FormGroup;
+  private subs: Subscription;
 
   constructor(
     private router: Router,
     private location: Location,
     private fb: FormBuilder,
     private reservaService: ReservaService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
   ) {
   }
 
   ngOnInit(): void {
     this.initForm();
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 
   initForm() {
@@ -61,11 +67,8 @@ export class ReservaFormComponent implements OnInit {
 
   reservar() {
     const reservaForm = this.getReserva();
-    this.reservaService.create(reservaForm).subscribe(res => {
+    this.subs = this.reservaService.create(reservaForm).subscribe(res => {
       this.toastr.success(ReservaConstants.MSG_SUCESSO_FORM_RESERVA);
-      if(res) {
-        console.log('Criou a reserva - ', res);
-      }
     })
   }
 
