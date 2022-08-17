@@ -2,15 +2,16 @@ import { ToastrService } from 'ngx-toastr';
 import { Cliente } from './../../../core/model/cliente.model';
 import { ClienteService } from './../../../core/service/cliente.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ClienteConstants } from '../cliente.constants';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.scss'],
 })
-export class ListaComponent implements OnInit {
+export class ListaComponent implements OnInit, OnDestroy {
 
   menu_list = ClienteConstants.HEADER_TITLE_LISTA_CLIENTE;
 
@@ -23,15 +24,20 @@ export class ListaComponent implements OnInit {
   constructor(
     private router: Router,
     private clienteService: ClienteService,
-    private notification: ToastrService
+    private notification: ToastrService,
+    private subs: Subscription
   ) {}
 
   ngOnInit(): void {
     this.getListaClientes();
   }
+  
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
 
   getListaClientes(): void {
-    this.clienteService.getList().subscribe((res) => {
+    this.subs = this.clienteService.getList().subscribe((res) => {
       console.log(res);
       if (res) {
         this.listaCliente = res;
