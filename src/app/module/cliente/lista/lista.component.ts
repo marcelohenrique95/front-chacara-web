@@ -38,14 +38,10 @@ export class ListaComponent implements OnInit, OnDestroy {
   getListaClientes(): void {
     this.subs = this.clienteService.getList().subscribe((res) => {
         this.listaCliente = res;
-        setTimeout(() => {
-          this.loader = false;
-          if (res.length === 0) {
-            this.notification.info(ClienteConstants.MSG_LIST_CLIENTES_VAZIA);
-          }
-        }, 1000);
-    }, err => {
-      this.loader = false;
+        this.loader = false;
+      }, err => {
+        this.loader = false;
+        this.notification.info(ClienteConstants.MSG_LIST_CLIENTES_VAZIA);
     });
   }
 
