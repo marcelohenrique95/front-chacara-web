@@ -37,8 +37,6 @@ export class ListaComponent implements OnInit, OnDestroy {
 
   getListaClientes(): void {
     this.subs = this.clienteService.getList().subscribe((res) => {
-      console.log(res);
-      if (res) {
         this.listaCliente = res;
         setTimeout(() => {
           this.loader = false;
@@ -46,7 +44,8 @@ export class ListaComponent implements OnInit, OnDestroy {
             this.notification.info(ClienteConstants.MSG_LIST_CLIENTES_VAZIA);
           }
         }, 1000);
-      }
+    }, err => {
+      this.loader = false;
     });
   }
 

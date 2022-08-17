@@ -37,7 +37,6 @@ export class ListaComponent implements OnInit, OnDestroy {
 
   getListaReservas() {
     this.subs = this.reservaService.getList().subscribe((res) => {
-      if (res) {
         this.listaReserva = res;
         console.log(this.listaReserva);
         setTimeout(() => {
@@ -46,7 +45,8 @@ export class ListaComponent implements OnInit, OnDestroy {
             this.notification.info(ReservaConstants.MSG_LISTA_RESERVA_VAZIA);
           }
         }, 1000);
-      }
+    }, err => {
+      this.loader = false;
     });
   }
 

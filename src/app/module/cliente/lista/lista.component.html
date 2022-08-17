@@ -33,11 +33,11 @@
     </div>
   </div>
   <div *ngIf="!loader" class="row text-center mt-3">
-    <p>
-      Existe um total de <strong>{{ menu_list.length }}</strong> clientes.
+    <p *ngIf="listaCliente.length; else emptyList">
+      Existe um total de <strong>{{ listaCliente.length }}</strong> clientes.
     </p>
-  </div>
-  <div *ngIf="menu_list.length === 0">
-    <p>Não há clientes cadastrados.</p>
+    <ng-template #emptyList>
+      <p>Não há clientes cadastrados.</p>
+    </ng-template>
   </div>
 </app-container-page>
