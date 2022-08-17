@@ -10,6 +10,7 @@ export class ReservaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('RESERVA');
   }
 
 }

@@ -1,5 +1,12 @@
 <app-container-page [title]="titlePage">
   <div class="row mb-2">
+    <div *ngIf="!loader" class="row mb-2">
+      <div class="btn-section d-flex">
+        <button class="btn bt-secondary" (click)="newReserva()">
+          NOVA RESERVA
+        </button>
+      </div>
+    </div>
     <div class="col-xs-12 d-flex justify-content-center">
       <div
         class="spinner-grow text-primary"
@@ -40,19 +47,12 @@
       </table>
     </div>
   </div>
-  <div *ngIf="!loader" class="row mb-2">
-    <div class="btn-section d-flex">
-      <button class="btn bt-secondary" (click)="newReserva()">
-        NOVA RESERVA
-      </button>
-    </div>
-  </div>
   <div *ngIf="!loader" class="row text-center mt-3">
-    <p>
-      Existe um total de <strong>{{ menu_list.length }}</strong> reservas.
+    <p *ngIf="listaReserva.length; else emptyList">
+      Existe um total de <strong>{{ listaReserva.length }}</strong> reservas.
     </p>
-  </div>
-  <div *ngIf="menu_list.length === 0">
-    <p>Não há reservas no momento.</p>
+    <ng-template #emptyList>
+      <p>Não há reservas no momento.</p>
+    </ng-template>
   </div>
 </app-container-page>
