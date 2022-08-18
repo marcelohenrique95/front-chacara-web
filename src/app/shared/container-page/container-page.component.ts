@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,10 +9,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ContainerPageComponent implements OnInit {
 
   @Input() title: string;
+  @Input() isForm: boolean;
 
-  constructor() { }
+  constructor(private location: Location) {
+    this.isForm = false;
+   }
 
   ngOnInit(): void {
+  }
+
+  back(): void{ 
+    this.location.back();
   }
 
 }

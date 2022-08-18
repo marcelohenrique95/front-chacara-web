@@ -1,7 +1,12 @@
 <div>
-  <div>
-    <h3>{{ title === undefined ? 'Página' : title }}</h3>
-  </div>
+  <section class="container__page">
+    <div>
+      <h3>{{ title === undefined ? 'Página' : title }}</h3>
+    </div>
+    <div>
+      <a *ngIf="isForm" (click)="back()">Voltar</a>
+    </div>
+  </section>
   <hr />
   <ng-content></ng-content>
 </div>
