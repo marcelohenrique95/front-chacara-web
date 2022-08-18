@@ -1,25 +1,29 @@
-# ChacaraWeb
+#### ChacaraWeb
 
 - Projeto consiste em um sistema de controle de reservas e clientes de um espaço de eventos.
 
 - Permite cadastrar, atualizar, deletar e listar + detalhes.
 
-- API Rest com SpringBoot
+- Integração com API Rest feita em Java Spring
 
 - Angular Generics
 
-- Projeto utilizando Framework Angular 13
+- Framework Angular 13
 
-# Requisitos
+#### Requisitos
 
 - Angular cli
 
 - Nodejs
 
-# Inicializar projeto localmente
+#### Inicializar projeto localmente
 
 - npm install
 
 - npm start
 
-- Acessar localhost:4200
+- Acessar localhost:4200 no navegador
+
+
+#### PRINT DA HOME
+![chacara-web-home](doc/chacara-web-home.png)
