@@ -9,14 +9,14 @@
             cursor: pointer;
 
             &:hover {
-                color: #e7964f;
+                color: #ff6060;
                 transition: 0.2s;
             }
         }
 }
 
 .active {
-    color: #e7964f !important;    
+    color: #ff6060 !important;    
 }
 
 @media screen and (max-width: 480px) {

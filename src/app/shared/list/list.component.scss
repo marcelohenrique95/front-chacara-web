@@ -1,14 +1,12 @@
 .container-list {
-  h1 {
+  h1, h4 {
     font-family: ChacFont;
-    color: #fb7f16;
+    color: #ff6060;
     margin: 5px 0 0 35px;
   }
 
   h4 {
-    font-family: ChacFont;
-    color: #fb7f16;
-    margin: 5px 0 0 55px;
+    margin: 5px 0 0 55px !important;
   }
 
   ul {

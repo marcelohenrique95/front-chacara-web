@@ -8,7 +8,7 @@ body {
 
 .card-form {
   background-color: #f9f9f9;
-  border-left: 5px solid #fb7f16;
+  border-left: 5px solid #ff6060;
 }
 
 .btn {
@@ -24,7 +24,7 @@ body {
 
 .bt-primary {
   background: #1f2949;
-  border-bottom: 3px solid #fb7f16;
+  border-bottom: 3px solid #ff6060;
 
   &:hover{
     box-shadow: 0 0 10px #3f518f;
@@ -32,10 +32,14 @@ body {
   }
 }
 
+hr {
+  border: 2px solid #ff6060;
+}
+
 .bt-secondary {
   background: #c7c7c7;
-  color: #1f2949;
-  border-bottom: 3px solid #1f2949;
+  color: #3b223f;
+  border-bottom: 3px solid #3b223f;
 }
 
 .bt-form {
@@ -76,7 +80,7 @@ body {
 
   label {
     font-weight: bold;
-    color: #1f2949;
+    color: #3b223f;
     font-size: small;
   }
 
@@ -99,12 +103,12 @@ body {
 table {
   width: 90%;
   background: #fffffff2;
-  border-bottom: 2px solid #1f2949;
+  border-bottom: 2px solid #3b223f;
   color: #5e5e5e;
   box-shadow: 2px 1px 5px #b9b9b9;
 
   .head-table {
-      border-bottom: 1px solid #1f2949;
+      border-bottom: 1px solid #3b223f;
 
       th {
           text-align: center;
@@ -126,14 +130,14 @@ table {
   }
 
   .fa-pen-to-square {
-      color: #fb7f16;
+      color: #ff6060;
   }
 }
 
 @media screen and (max-width: 480px) {
   .card-form {
       padding: 0;
-      border-bottom: 5px solid #fb7f16;
+      border-bottom: 5px solid #ff6060;
       border-left: none;
   }
 }
