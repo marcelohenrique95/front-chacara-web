@@ -1,4 +1,6 @@
-export class Reserva {
+import { Cliente } from "./cliente.model";
+
+export interface Reserva {
     id: number;
     cpfCliente: number;
     tpEvento: string;
@@ -7,5 +9,5 @@ export class Reserva {
     dataSaida: Date;
     situacao: number;
     valor: number;
-    idPessoa: number;
+    cliente: Cliente;
 }
