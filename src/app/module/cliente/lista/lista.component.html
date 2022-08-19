@@ -1,36 +1,35 @@
 <app-container-page [title]="titleList">
   <div class="row mb-2">
+    <div class="mb-2">
+      <div class="btn-section d-flex">
+        <button class="btn bt-secondary" (click)="newCliente()">
+          NOVO CLIENTE
+        </button>
+      </div>
+    </div>
     <div class="col-xs-12 d-flex justify-content-center">
-      <div
-        class="spinner-grow text-primary"
-        style="width: 3rem; height: 3rem"
-        role="status"
-        *ngIf="loader"
-      ></div>
-      <table *ngIf="!loader">
+      <table>
         <tr class="head-table">
           <th>#</th>
           <th *ngFor="let item of menu_list">{{ item }}</th>
         </tr>
-        <tr class="body-table" *ngFor="let dados of listaCliente">
-          <td>
-            <a>
-              <i class="fa-solid fa-eye"></i>
-            </a>
-          </td>
-          <td>{{ dados.nome }}</td>
-          <td>{{ dados.telefone === null ? '-' : dados.telefone }}</td>
-          <td>{{ dados.email }}</td>
-        </tr>
+        <div *ngIf="!loader">
+          <tr class="body-table" *ngFor="let dados of listaCliente">
+            <td>
+              <a>
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+            <td>{{ dados.nome }}</td>
+            <td>{{ dados.telefone === null ? '-' : dados.telefone }}</td>
+            <td>{{ dados.email }}</td>
+          </tr>
+        </div>
       </table>
     </div>
   </div>
-  <div *ngIf="!loader" class="row mb-2">
-    <div class="btn-section d-flex">
-      <button class="btn bt-secondary" (click)="newCliente()">
-        NOVO CLIENTE
-      </button>
-    </div>
+  <div class="row d-flex justify-content-center mt-3">
+    <div class="spinner-grow text-primary load" style="width: 3rem; height: 3rem" role="status" *ngIf="loader"></div>
   </div>
   <div *ngIf="!loader" class="row text-center mt-3">
     <p *ngIf="listaCliente.length; else emptyList">
