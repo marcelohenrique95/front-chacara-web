@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
 import { ListComponent } from './list/list.component';
 import { ContainerPageComponent } from './container-page/container-page.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -15,6 +16,7 @@ import { ContainerPageComponent } from './container-page/container-page.componen
     CardComponent,
     ListComponent,
     ContainerPageComponent,
+    SearchComponent,
   ],
   exports : [
     HeaderComponent,
