@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'chacara-web';
 
   private readonly urlLogin = 'login';
+  private readonly urlHome = 'home;'
 
   constructor(private router: Router) {}
 

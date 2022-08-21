@@ -1,17 +1,21 @@
 .header_container {
-    justify-content: space-evenly;
-    min-width: 600px;
-    max-width: 45%;
+    align-items: center;
+    justify-content: space-between;
         a {
             color: #dfdfdf;
             text-decoration: none;
             font-weight: bold;
+            margin-right: 10px;
             cursor: pointer;
 
             &:hover {
                 color: #ff6060;
                 transition: 0.2s;
             }
+        }
+
+        img {
+            width: 65px;
         }
 }
 

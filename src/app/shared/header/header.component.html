@@ -1,5 +1,8 @@
 <div class="header_container d-flex mt-2">
-    <div class="mr-3 mb-1" *ngFor="let opt of menu_options">
-        <a [routerLink]="opt.link" routerLinkActive="active" class="mr-2">{{ opt.label | uppercase }}</a>
+    <div>
+        <img src="./../../../assets/image/logo-chacara-header.png"/>
+    </div>
+    <div>
+        <a  *ngFor="let opt of menu_options" [routerLink]="opt.link" routerLinkActive="active" class="mr-2">{{ opt.label | uppercase }}</a>
     </div>
 </div>
