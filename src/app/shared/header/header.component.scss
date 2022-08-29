@@ -1,8 +1,13 @@
 .header_container {
     align-items: center;
     justify-content: space-between;
+
+        div:first-child {
+            margin-top: 10px;
+        }
+        
         a {
-            color: #1D3354;
+            color: #28464B;
             text-decoration: none;
             font-weight: bold;
             margin-right: 10px;
@@ -10,7 +15,7 @@
 
             &:hover {
                 font-size: 17px;
-                color: #D64045;
+                color: #931621;
                 transition: 0.2s;
             }
         }
@@ -23,12 +28,12 @@
             margin-left: 15px;
             font-weight: bold;
             font-size: 20px;
-            color: #D64045
+            color: #931621
         }
 }
 
 .active {
-    color: #D64045 !important;  
+    color: #931621 !important;  
     font-size: 17px;  
 }
 

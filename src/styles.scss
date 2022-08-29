@@ -2,13 +2,15 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~ngx-toastr/toastr';
 
-body {
-  background-image: linear-gradient(to right, #E9FFF9, #9ED8DB, #467599);
+html, body {
+  height: 100%;
+  background-size: cover;
+  background-image: linear-gradient(to bottom, #fff , #2C8C99);
 }
 
 .card-form {
   background-color: #f9f9f9;
-  border-left: 5px solid #D64045;
+  border-left: 5px solid #931621;
 }
 
 .btn {
@@ -18,14 +20,11 @@ body {
   color: #fff;
   min-width: 170px;
   border-radius: 20px;
-  &:hover {
-    color: #fff;
-  }
 }
 
 .bt-primary {
-  border: 1px solid #1D3354;
-  background: #D64045;
+  border: 1px solid #28464B;
+  background-image: linear-gradient(to right, #2a2a2a , #931621);
   color: #fff;
 
   &:hover{
@@ -35,12 +34,18 @@ body {
 }
 
 hr {
-  border: 2px solid #D64045;
+  border: 2px solid #931621;
 }
 
 .bt-secondary {
-  color: #3b223f;
-  border: 1px solid #3b223f;
+  color: #28464B;
+  border: 1px solid #931621;
+
+  &:hover {
+    background: #931621;
+    transition: 0.4s;
+    color: #fff;
+  }
 }
 
 .bt-form {

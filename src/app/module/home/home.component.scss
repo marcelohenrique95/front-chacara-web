@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-around;
     padding: 20px 10px;
-    color: #467599;
+    color: #28464B;
     h3 {
       font-size: 45px;
     }
@@ -14,26 +14,34 @@
     }
 
     div {
-      padding-top: 110px;
+      margin-top: 110px;
     }
 
     &__text-market {
 
       hr {
-        color: #D64045 !important;
+        color: #931621 !important;
         margin: 0px 180px 10px 0px !important;
       }
     }
 
     &__btn {
-      margin-top: -90px;
+
+      img {
+        width: 40px !important;
+        height: 30px !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin-right: 5px !important;
+        object-fit: contain !important;
+      }
     }
 
   }
 
   h3, h4 {
     font-family: ChacFont;
-    color: #D64045;
+    color: #931621;
   }
 
   &__list {
@@ -50,13 +58,14 @@
   }
 
   hr {
-    color: #1D3354;
+    color: #28464B;
     border: 1px solid;
-    margin: 70px 70px 0px 70px;
+    margin: 30px 70px;
   }
 
   
   &__info {
+    background-image: linear-gradient(to top, #fff , #2C8C99);
     width: 100%;
     padding: 80px 50px;
   }
@@ -64,9 +73,9 @@
   img {
     width: 440px;
     height: 440px;
-    border: 2px solid #1D3354;
+    border: 2px solid #28464B;
     border-radius: 100%;
-    box-shadow: -2px 0px 16px 0px #1d3354;
+    box-shadow: -2px 0px 16px 0px #28464B;
     object-fit: cover;
 
     &:hover {
