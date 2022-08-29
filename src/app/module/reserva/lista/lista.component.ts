@@ -5,6 +5,7 @@ import { ReservaService } from './../../../core/service/reserva.service';
 import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Cliente } from 'src/app/core/model/cliente.model';
 
 @Component({
   selector: 'app-lista',
@@ -17,6 +18,7 @@ export class ListaComponent implements OnInit, OnDestroy {
   menu_list = ReservaConstants.HEADER_TITLE_LISTA_RESERVA;
 
   listaReserva: Reserva[] = [];
+  listaCliente: Cliente[] = [];
 
   loader: boolean = true;
   private subs: Subscription;
@@ -33,6 +35,10 @@ export class ListaComponent implements OnInit, OnDestroy {
   
   ngOnDestroy(): void {
     this.subs.unsubscribe();
+  }
+
+  getListClientes(): void {
+    
   }
 
   getListaReservas() {

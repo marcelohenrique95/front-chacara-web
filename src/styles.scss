@@ -3,12 +3,12 @@
 @import '~ngx-toastr/toastr';
 
 body {
-  background-image: linear-gradient(to right, #3d6076, #3b223f);
+  background-image: linear-gradient(to right, #E9FFF9, #9ED8DB, #467599);
 }
 
 .card-form {
   background-color: #f9f9f9;
-  border-left: 5px solid #ff6060;
+  border-left: 5px solid #D64045;
 }
 
 .btn {
@@ -17,14 +17,16 @@ body {
   padding: 8px 20px;
   color: #fff;
   min-width: 170px;
+  border-radius: 20px;
   &:hover {
     color: #fff;
   }
 }
 
 .bt-primary {
-  background: #1f2949;
-  border-bottom: 3px solid #ff6060;
+  border: 1px solid #1D3354;
+  background: #D64045;
+  color: #fff;
 
   &:hover{
     box-shadow: 0 0 10px #3f518f;
@@ -33,13 +35,12 @@ body {
 }
 
 hr {
-  border: 2px solid #ff6060;
+  border: 2px solid #D64045;
 }
 
 .bt-secondary {
-  background: #c7c7c7;
   color: #3b223f;
-  border-bottom: 3px solid #3b223f;
+  border: 1px solid #3b223f;
 }
 
 .bt-form {
@@ -49,6 +50,12 @@ hr {
   padding: 5px;
   text-transform: uppercase;
   margin: 5px 10px;
+  background: #3d6076;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.4s;
+  }
 }
 
 .success {
@@ -98,6 +105,18 @@ hr {
     height: 35px;
     border-radius: 4px;
   }
+}
+
+.form-validators {
+  font-weight: bold;
+  font-size: 12px;
+  color: #772323;
+}
+
+.alert-form {
+  font-size: 12px;
+  color: #c3c3c3;
+  text-shadow: 0px 0px 1px #fff303;
 }
 
 table {

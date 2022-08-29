@@ -1,6 +1,6 @@
 import { Reserva } from "./reserva.model";
 
-export interface Cliente {
+export class Cliente {
     id: number;
     nome: string;
     cpf: number;

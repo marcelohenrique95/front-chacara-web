@@ -1,11 +1,11 @@
-import { Cliente } from './../../../core/model/cliente.model';
-import { ToastrService } from 'ngx-toastr';
-import { ClienteService } from './../../../core/service/cliente.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { ClienteService } from './../../../core/service/cliente.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ClienteConstants } from '../cliente.constants';
+import { Cliente } from 'src/app/core/model/cliente.model';
 
 @Component({
   selector: 'app-cliente-form',
@@ -29,31 +29,28 @@ export class ClienteFormComponent implements OnInit {
     this.initForm();
   }
 
-  initForm() {
+  initForm(): void {
     this.form = new FormGroup({
-      nome: new FormControl([null, Validators.required]),
-      cpf: new FormControl([null, Validators.required]),
-      telefone: new FormControl([null, Validators.required]),
-      email: new FormControl([null]),
-      cidade: new FormControl([null, Validators.required]),
-      bairro: new FormControl([null, Validators.required]),
-      numero: new FormControl([null, Validators.required]),
+      nome: new FormControl('', Validators.required),
+      cpf: new FormControl('', Validators.required),
+      telefone: new FormControl('', Validators.required),
+      email: new FormControl(null, Validators.required),
+      cidade: new FormControl(null, Validators.required),
+      bairro: new FormControl(null, Validators.required),
+      numero: new FormControl(null, Validators.required),
     });
+
   }
 
   montaEndereco(): string {
-    const endereco =
-      this.form.controls['cidade'].value +
-      ', ' +
-      this.form.controls['bairro'].value +
-      ', ' +
-      this.form.controls['numero'].value;
-      console.log(endereco);
+    let endereco = this.form.controls['cidade'].value
+      endereco += ', ' + this.form.controls['bairro'].value;
+      endereco += ', ' + this.form.controls['numero'].value;
     return endereco;
   }
 
   getCliente(): Cliente {
-    const data = new Cliente();
+    let data = new Cliente();
     data.nome = this.form.controls['nome'].value;
     data.cpf = this.form.controls['cpf'].value;
     data.telefone = this.form.controls['telefone'].value;
@@ -63,15 +60,33 @@ export class ClienteFormComponent implements OnInit {
     return data;
   }
 
-  cadastrarCliente() {
+  rossuter() {
+    this.router.navigate(['cliente/lista-cliente']);
+  }
+
+  save() {
+    this.form.markAsDirty();
     const clienteForm = this.getCliente();
-    this.clienteService.create(clienteForm).subscribe((res) => {
-      this.notification.success(ClienteConstants.MSG_SUCESSO_CAD_CLIENTE);
-    });
+    
+    if(this.form.valid) {
+      this.clienteService.create(clienteForm).subscribe(() => {
+        this.notification.success(ClienteConstants.MSG_SUCESSO_CAD_CLIENTE);
+        this.router.navigate(['cliente/lista-cliente']);
+      });
+    } else {
+      this.validateForm();
+    }
   }
 
   cancel(): void {
     this.location.back();
+  }
+
+  validateForm(): void {
+    Object.keys(this.form.controls).forEach(field => {
+      const control = this.form.get(field);
+      control.markAsTouched({ onlySelf: true });    
+    });
   }
 
   get f() {

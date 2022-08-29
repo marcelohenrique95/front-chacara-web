@@ -42,19 +42,18 @@ export class ReservaFormComponent implements OnInit, OnDestroy {
 
   initForm() {
     this.form = new FormGroup({
-      tpEvento: new FormControl([null, Validators.required]),
-      dataInicio: new FormControl([null, Validators.required]),
-      dataFim: new FormControl([null, Validators.required]),
-      situacao: new FormControl([null, Validators.required]),
-      numConvidados: new FormControl([null, Validators.required]),
-      valor: new FormControl([null, Validators.required]),
-      cpfCliente: new FormControl([null, Validators.required]),
+      tpEvento: new FormControl([], Validators.required),
+      dataInicio: new FormControl(null, Validators.required),
+      dataFim: new FormControl(null, Validators.required),
+      situacao: new FormControl(null, Validators.required),
+      numConvidados: new FormControl(null, Validators.required),
+      valor: new FormControl(null, Validators.required),
+      cpfCliente: new FormControl(null, Validators.required),
     })
   }
 
   getReserva(): Reserva {
-    const data = new Reserva();
-    data.cpfCliente = this.form.controls['cpfCliente'].value;
+    let data = new Reserva();
     data.tpEvento = this.form.controls['tpEvento'].value;
     data.dataEntrada = this.form.controls['dataInicio'].value;
     data.dataSaida = this.form.controls['dataFim'].value;

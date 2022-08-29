@@ -1,8 +1,8 @@
 <div class="header_container d-flex mt-2">
     <div>
-        <img src="./../../../assets/image/logo-chacara-header.png"/>
+        <p>CHÁCARA 7 ANÕES</p>
     </div>
     <div>
-        <a  *ngFor="let opt of menu_options" [routerLink]="opt.link" routerLinkActive="active" class="mr-2">{{ opt.label | uppercase }}</a>
+        <a *ngFor="let opt of menu_options" [routerLink]="opt.link" routerLinkActive="active" class="mr-2">{{ opt.label | uppercase }}</a>
     </div>
 </div>

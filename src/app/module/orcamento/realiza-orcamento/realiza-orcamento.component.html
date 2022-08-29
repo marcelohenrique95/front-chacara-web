@@ -37,8 +37,8 @@
         <div class="form-group">
           <label>Nº de convidados:</label>
           <select formControlName="selectNumberInvites">
-            <option *ngFor="let invit of listaConvidados" [value]="invit.id">
-              {{ invit.label }}
+            <option *ngFor="let invite of listaConvidados" [value]="invite.id">
+              {{ invite.label }}
             </option>
           </select>
         </div>

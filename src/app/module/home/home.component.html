@@ -1,16 +1,28 @@
 <div class="container-home">
-  <section class="container-home__market text-center">
-    <h3>Festas & Eventos</h3>
+  <section class="container-home__market">
     <div>
-      <button class="btn bt-primary" (click)="conhecer()">CONHECER</button>
+      <div class="container-home__market__text-market">
+        <h3>Espaço de Eventos</h3>
+        <hr/>
+        <p class="mb-0">Aníversarios, chá de bebê, comemorações, retiros, confraternização de empresas e muito mais..</p>
+        <p class="mb-0">Várias formas de pagamento e os melhores preços da região</p>
+        <p>Garanta já sua reserva, dando um sinal e o restante somente na data do seu evento.</p>
+      </div>
+      <div class="container-home__market__btn">
+        <button class="btn bt-primary" (click)="conhecer()">Reservar agora</button>
+      </div>
+    </div>
+    <div>
+      <img src="./../../../assets/image/chacara-piscina.jpg"/>
     </div>
   </section>
-  <section class="container-home__list d-flex">
+  <!--<section class="container-home__list d-flex">
     <div *ngFor="let item of images">
       <app-card><img [src]="item.urlImg" /></app-card>
     </div>
-  </section>
-  <section class="container-home__info">
+  </section>-->
+  <hr/>
+ <section class="container-home__info">
     <app-list [listItem]="listItemPerDay"></app-list>
   </section> 
 </div>

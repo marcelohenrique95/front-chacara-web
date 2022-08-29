@@ -1,6 +1,6 @@
 import { Cliente } from "./cliente.model";
 
-export interface Reserva {
+export class Reserva {
     id: number;
     tpEvento: string;
     convidados: number;
