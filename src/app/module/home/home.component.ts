@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   public listSocial = social;
 
+  public urlWhats: string = 'https://l.instagram.com/?u=https%3A%2F%2Fapi.whatsapp.com%2Fsend%3Fphone%3D5565981234218%26';
+
   public showInfos: boolean = false;
 
   constructor(private itemIncludeService: ItemsIncludeService) { }
@@ -37,7 +39,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     })
   }
 
-  conhecer():void {
+  goToReserva(): void {
+    //location.href(this.urlWhats);
+  }
+
+  goToBottom():void {
     window.scrollTo(1000, 1000)
   }
 

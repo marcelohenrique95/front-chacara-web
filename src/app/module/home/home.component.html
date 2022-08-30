@@ -10,7 +10,7 @@
         <p>Garanta já sua reserva, dando um sinal e o restante somente na data do seu evento.</p>
       </div>
       <div class="container-home__market__btn mt-0">
-        <button class="btn bt-primary" (click)="conhecer()">
+        <button class="btn bt-primary" (click)="goToReserva()">
           <img src="./../../../assets/image/whatsapp-green-icon.png" />
           <span>
             Reservar agora
@@ -22,11 +22,6 @@
       <img src="./../../../assets/image/chacara-piscina.jpg" />
     </div>
   </section>
-  <!--<section class="container-home__list d-flex">
-    <div *ngFor="let item of images">
-      <app-card><img [src]="item.urlImg" /></app-card>
-    </div>
-  </section>-->
   <section class="container-home__info">
     <div class="container-home__info__social">
       <a  *ngFor="let social of listSocial" [href]="social.link" target="blank">
