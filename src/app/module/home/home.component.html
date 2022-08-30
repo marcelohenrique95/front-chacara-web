@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-    <div>
+    <div class="container-home__image">
       <img src="./../../../assets/image/chacara-piscina.jpg" />
     </div>
   </section>
@@ -28,6 +28,11 @@
     </div>
   </section>-->
   <section class="container-home__info">
+    <div class="container-home__info__social">
+      <a  *ngFor="let social of listSocial" [href]="social.link" target="blank">
+        <img [src]="social.source"/>
+      </a>
+    </div>
     <hr />
     <app-list [listItem]="listItemPerDay"></app-list>
   </section>

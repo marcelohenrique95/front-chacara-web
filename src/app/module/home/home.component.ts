@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ItemInclude } from 'src/app/core/model/item-include.model';
 import { ItemsIncludeService } from 'src/app/core/service/items-include.service';
 import { cardImg } from 'src/app/static/card-fotos';
+import { social } from 'src/app/static/social';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   public images = cardImg;
 
   public listItemPerDay: ItemInclude[] = [];
+
+  public listSocial = social;
 
   public showInfos: boolean = false;
 

@@ -65,22 +65,42 @@
 
   
   &__info {
-    background-image: linear-gradient(to top, #fff , #2C8C99);
+    background-image: linear-gradient(to top, #fff , #3D95A1);
     width: 100%;
-    padding: 80px 50px;
+    padding: 25px 50px;
+
+    &__social {
+      text-align: right;
+      margin-right: 16%;
+
+      img {
+        width: 50px !important;
+        height: 50px !important;
+        cursor: pointer;
+        margin-right: 15px;
+
+        &:hover {
+          opacity: 0.5;
+          transition: 0.5s;
+        }
+      }
+    }
   }
 
-  img {
-    width: 440px;
-    height: 440px;
-    border: 2px solid #28464B;
-    border-radius: 100%;
-    box-shadow: -2px 0px 16px 0px #28464B;
-    object-fit: cover;
+  &__image {
 
-    &:hover {
-      opacity: 1;
-      transition: 0.5s;
+    img {
+      width: 440px;
+      height: 440px;
+      border: 2px solid #28464B;
+      border-radius: 100%;
+      box-shadow: -2px 0px 16px 0px #28464B;
+      object-fit: cover;
+      
+      &:hover {
+        opacity: 1;
+        transition: 0.5s;
+      }
     }
   }
 }
