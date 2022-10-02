@@ -27,6 +27,13 @@
 
     &__btn {
 
+      .bt-wpp {
+        background-image: linear-gradient(to bottom, #fefefe, #8f8f8f);
+        color: #00A859;
+        box-shadow: 3px 3px 6px 0px #9b9999;
+        border-radius: 10px;
+      }
+
       img {
         width: 40px !important;
         height: 30px !important;
@@ -65,16 +72,19 @@
 
   
   &__info {
-    background-image: linear-gradient(to top, #fff , #3D95A1);
+    background-image: linear-gradient(to bottom, #fff , #931621);
     width: 100%;
     padding: 25px 50px;
 
     &__social {
       text-align: right;
-      margin-right: 16%;
+      margin-right: 11%;
+
+      a:first-child {
+        margin-right: 9px;
+      }
 
       img {
-        width: 50px !important;
         height: 50px !important;
         cursor: pointer;
         margin-right: 15px;
@@ -85,6 +95,10 @@
         }
       }
     }
+
+    hr {
+      color: #931621;
+    }
   }
 
   &__image {
@@ -92,9 +106,8 @@
     img {
       width: 440px;
       height: 440px;
-      border: 2px solid #dbdbdb;
       border-radius: 100%;
-      box-shadow: 0px 0px 13px 4px #dbdbdb;
+      box-shadow: 0px 0px 10px 1px #931621;
       object-fit: cover;
       
       &:hover {

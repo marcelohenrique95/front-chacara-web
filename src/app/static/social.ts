@@ -6,6 +6,6 @@ export const social = [
         source: './../../../assets/image/instagram-logo.png', link: 'https://www.instagram.com/chacara7anoes/' 
     },
     {
-        source: './../../../assets/image/local-icon.png', link: '' 
+        source: './../../../assets/image/whatsapp-green-icon.png', link: '' 
     }
 ]
